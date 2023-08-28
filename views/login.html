@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            transition: all .2s linear;
+        }
+        
+        Body {
+            Font-Family: "Poppins", Sans-Serif;
+        }
+        
+        h1 {
+            text-transform: uppercase;
+            font-size: 70px;
+            padding: 20px;
+            text-align: center;
+            Font-Family: "Poppins", Sans-Serif;
+        }
+        
+        .navbar {
+            font-family: iran_sans_light;
+            Display: Flex;
+            Align-Items: Center;
+            top: 80px;
+        }
+        
+        .logo img {
+            height: 100px;
+            float: left;
+        }
+        
+        Nav {
+            font-family: iran_sans_light;
+            background: linear-gradient(#bfbfbf, #adadad80, #8a89895d);
+            Flex: 1;
+            Text-Align: Right;
+            font-size: 30px;
+            height: 100px;
+        }
+        
+        a.link:hover {
+            font-size: 40px;
+        }
+        
+        Nav Ul {
+            Display: Inline-Block;
+            List-Style-Type: None;
+        }
+        
+        Nav Ul Li {
+            Display: Inline-Block;
+            Margin-Right: 20px;
+        }
+        
+        A {
+            Text-Decoration: None;
+            color: #Ffffff;
+        }
+        
+        P {
+            Color: #555;
+        }
+        
+        .Container {
+            Max-Width: 1300px;
+            Margin: Auto;
+            Padding-Left: 0;
+            Padding-Right: 0;
+        }
+        
+        .btn {
+            font-size: 30px;
+            Display: Inline-Block;
+            Background: #2196F3;
+            Color: #Ffffff;
+            text-decoration: #Ffffff;
+            Padding: 8px 20px;
+            Margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        h2 {
+            text-align: right;
+        }
+        
+        .Header {
+            Background: Radial-Gradient(#Fff, #Ffd6d6);
+        }
+        
+        .wrapper {
+            width: 250px;
+            height: 350px;
+            margin-top: 60px;
+            text-align: left;
+        }
+        
+        .face {
+            font-family: Tahoma, Verdana, Segoe, sans-serif;
+            font-size: 14px;
+            position: absolute;
+            left: 40%;
+            width: 250px;
+            height: 350px;
+            padding: 20px;
+            background: rgba(250, 250, 250, 0.96);
+            border: 3px solid #07ad90;
+            border-radius: 3px;
+            text-align: center;
+        }
+        
+        .content {
+            color: #666;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 1.2em;
+            color: #07ad90;
+        }
+        
+        .field-wrapper {
+            width: 100%;
+            border: none;
+            background: transparent;
+            line-height: 2em;
+            border-bottom: 1px solid #07ad90;
+            color: #666;
+        }
+        
+        #submit {
+            appearance: none;
+            cursor: pointer;
+            width: 100%;
+            background: #07ad90;
+            font: #fff;
+            border: 1px solid #07ad90;
+            border-radius: 3px;
+            padding: 5px
+        }
+        
+        .signup {
+            display: block;
+            margin: 20px 0;
+            font-size: 1em;
+            text-align: center;
+            color: navy;
+            cursor: pointer;
+        }
+        
+        input[type="submit"] {
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+            width: 100%;
+            background: #07ad90;
+            line-height: 2em;
+            color: #fff;
+            border: 1px solid #07ad90;
+            border-radius: 3px;
+            padding: 5px;
+        }
+        
+        footer {
+            background: radial-gradient(#Fff, #bfbfbf);
+            float: left;
+            display: block;
+            color: #4b4c4d;
+            width: 100%;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+            bottom: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Header">
+        <h1>Mega Mart</h1>
+        <div class="Container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="logo">
+                </div>
+                <nav class="nav-bar">
+                    <ul id="MenuItems">
+
+                        <li>
+                            <a class="link" href="home">Home</a>
+                        </li>
+                        <li>
+                            <a class="link" href="Product">Products</a>
+                        </li>
+                        <li>
+                            <a class="link" href="contact">Contact</a>
+                        </li>
+                        <li>
+                            <button class="btn"><a href="login">Log In</a></button>
+
+                        </li>
+                        <li>
+                            <button class="btn"><a href="signup">Sign Up</a></button>
+
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="face face-front">
+                <div class="content">
+                    <h2>Log in</h2>
+                    <br>
+                    <form action="/login" method="post">
+                        <div class="field-wrapper">
+                            <label>Username</label>
+                            <input type="text" name="username" placeholder="username">
+                        </div>
+                        <br>
+                        <div class="field-wrapper">
+                            <label>Password</label>
+                            <input type="password" name="password" placeholder="password">
+                        </div>
+                        <br>
+                        <div class="field-wrapper" id="btn">
+                            <input type="submit">
+                        </div>
+                        <br>
+                        <span class="signup">Not a user?  Sign up</span>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class="col-sm-4 col-md-3 item">Copyright</div>
+        <div class="col-sm-4 col-md-3 item">Contact : Harshita Vajpayee <br> Email: ##@gmail.com</div>
+
+    </footer>
+
+
+</body>
+
+</html>
